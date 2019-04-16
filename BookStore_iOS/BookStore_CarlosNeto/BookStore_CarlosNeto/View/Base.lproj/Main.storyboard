@@ -69,6 +69,7 @@
                                 <connections>
                                     <outlet property="priceLbl" destination="tFU-bX-ciA" id="m5k-2m-nxe"/>
                                     <outlet property="titleLbl" destination="Y1J-yb-wda" id="hUd-Sm-Ehv"/>
+                                    <segue destination="Kp9-IJ-WZH" kind="showDetail" identifier="BookSegue" id="9lI-9j-tl8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -134,4 +135,7 @@
             <point key="canvasLocation" x="568.79999999999995" y="503.29835082458777"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="9lI-9j-tl8"/>
+    </inferredMetricsTieBreakers>
 </document>
