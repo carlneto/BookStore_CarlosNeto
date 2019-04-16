@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		28244598AFA07036FD77DF46 /* libPods-BookStore_CarlosNeto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC25E335BE439FE8DE4999B2 /* libPods-BookStore_CarlosNeto.a */; };
+		B63303CA2265CFCF00ACB852 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B63303C92265CFCF00ACB852 /* MainViewController.m */; };
 		B6D0C7BD2264DE6C006DFA10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D0C7BC2264DE6C006DFA10 /* AppDelegate.m */; };
 		B6D0C7C32264DE6C006DFA10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D0C7C12264DE6C006DFA10 /* Main.storyboard */; };
 		B6D0C7C52264DE6D006DFA10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D0C7C42264DE6D006DFA10 /* Assets.xcassets */; };
@@ -18,6 +19,8 @@
 /* Begin PBXFileReference section */
 		681C7EBD505E5250B05B7053 /* Pods-BookStore_CarlosNeto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStore_CarlosNeto.release.xcconfig"; path = "Target Support Files/Pods-BookStore_CarlosNeto/Pods-BookStore_CarlosNeto.release.xcconfig"; sourceTree = "<group>"; };
 		AC25E335BE439FE8DE4999B2 /* libPods-BookStore_CarlosNeto.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookStore_CarlosNeto.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B63303C82265CFCF00ACB852 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		B63303C92265CFCF00ACB852 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		B6D0C7B82264DE6C006DFA10 /* BookStore_CarlosNeto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStore_CarlosNeto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D0C7BB2264DE6C006DFA10 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B6D0C7BC2264DE6C006DFA10 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,6 +61,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B63303C72265CF8C00ACB852 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6D0C7BB2264DE6C006DFA10 /* AppDelegate.h */,
+				B6D0C7BC2264DE6C006DFA10 /* AppDelegate.m */,
+				B6D0C7C42264DE6D006DFA10 /* Assets.xcassets */,
+				B6D0C7C62264DE6D006DFA10 /* LaunchScreen.storyboard */,
+				B6D0C7C92264DE6D006DFA10 /* Info.plist */,
+				B6D0C7CA2264DE6D006DFA10 /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		B6D0C7AF2264DE6C006DFA10 = {
 			isa = PBXGroup;
 			children = (
@@ -79,13 +95,10 @@
 		B6D0C7BA2264DE6C006DFA10 /* BookStore_CarlosNeto */ = {
 			isa = PBXGroup;
 			children = (
-				B6D0C7BB2264DE6C006DFA10 /* AppDelegate.h */,
-				B6D0C7BC2264DE6C006DFA10 /* AppDelegate.m */,
 				B6D0C7C12264DE6C006DFA10 /* Main.storyboard */,
-				B6D0C7C42264DE6D006DFA10 /* Assets.xcassets */,
-				B6D0C7C62264DE6D006DFA10 /* LaunchScreen.storyboard */,
-				B6D0C7C92264DE6D006DFA10 /* Info.plist */,
-				B6D0C7CA2264DE6D006DFA10 /* main.m */,
+				B63303C82265CFCF00ACB852 /* MainViewController.h */,
+				B63303C92265CFCF00ACB852 /* MainViewController.m */,
+				B63303C72265CF8C00ACB852 /* Supporting Files */,
 			);
 			path = BookStore_CarlosNeto;
 			sourceTree = "<group>";
@@ -187,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6D0C7CB2264DE6E006DFA10 /* main.m in Sources */,
+				B63303CA2265CFCF00ACB852 /* MainViewController.m in Sources */,
 				B6D0C7BD2264DE6C006DFA10 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TF6AD97S43;
-				INFOPLIST_FILE = BookStore_CarlosNeto/Info.plist;
+				INFOPLIST_FILE = "BookStore_CarlosNeto/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -350,7 +364,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TF6AD97S43;
-				INFOPLIST_FILE = BookStore_CarlosNeto/Info.plist;
+				INFOPLIST_FILE = "BookStore_CarlosNeto/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
