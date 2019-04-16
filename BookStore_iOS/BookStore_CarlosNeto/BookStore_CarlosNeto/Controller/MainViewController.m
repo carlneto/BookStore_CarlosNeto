@@ -13,6 +13,8 @@
 @interface MainViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *volumesTableView;
+@property (atomic) int startIndex;
+@property int maxResults;
 
 @end
 
@@ -22,26 +24,37 @@
 {
     [super viewDidLoad];
     self.title = @"Books List";
-    [self addObserver:self forKeyPath:@"volumes" options:NSKeyValueObservingOptionNew context:nil];
+    _startIndex = 0;
+    _maxResults = 20;
     [self getBookVolumes];
 }
 
 - (void)getBookVolumes
 {
+    const NSString *urn = @"https://www.googleapis.com/books/v1/volumes";
+    NSString *uri = [NSString stringWithFormat:@"%@?q=ios&maxResults=%d&startIndex=%d", urn, _maxResults, _startIndex];
+    __weak __typeof(self) zelf = self;
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"https://www.googleapis.com/books/v1/volumes?q=ios&maxResults=20&startIndex=0" parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary * responseObject) {
-        self.volumes = [CNBookVolumes fromJSONDictionary:responseObject];
+    [manager GET:uri parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary * responseObject) {
+        CNBookVolumes *bookVolumes = [CNBookVolumes fromJSONDictionary:responseObject];
+        [zelf setBookVolumes:bookVolumes];
+        zelf.startIndex += zelf.maxResults;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        self.volumes = [[CNBookVolumes alloc] init];
+        NSLog(@"error: %@", error);
     }];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+- (void)setBookVolumes:(CNBookVolumes*)bookVolumes
 {
-    if (object == self && [keyPath isEqualToString:@"volumes"])
-    {
-        [_volumesTableView reloadData];
+    if (!_volumes) {
+        _volumes = bookVolumes;
+    } else {
+        for (CNItem *item in bookVolumes.items)
+        {
+            [_volumes.items addObject:item];
+        }
     }
+    [_volumesTableView reloadData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -58,7 +71,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CNItem *item = [_volumes items][indexPath.row];
+    NSInteger row = indexPath.row;
+    CNItem *item = [_volumes items][row];
     NSString *title = item.volumeInfo.title;
     CNSaleInfoListPrice *listPrice = item.saleInfo.listPrice;
     NSString *price = listPrice ? [NSString stringWithFormat:@"%0.2f %@", listPrice.amount, listPrice.currencyCode.value] : @"---";
@@ -66,6 +80,23 @@
     BookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookCell" forIndexPath:indexPath];
     [cell setTitle:title andPrice:price];
     return cell;
+}
+
+- (BOOL)isLastIndex:(NSIndexPath *)indexPath
+{
+    NSInteger lastSectionIndex = [_volumesTableView numberOfSections] - 1;
+    NSInteger lastRowIndex = [_volumesTableView numberOfRowsInSection:lastSectionIndex] - 1;
+    return indexPath.section == lastSectionIndex && indexPath.row == lastRowIndex;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    CGFloat currentOffset = scrollView.contentOffset.y;
+    CGFloat maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height;
+    if (currentOffset + 15.0 > maximumOffset)
+    {
+        [self getBookVolumes];
+    }
 }
 
 @end

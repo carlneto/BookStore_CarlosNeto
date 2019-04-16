@@ -402,7 +402,13 @@ static id map(id collection, id (^f)(id value)) {
     id result = nil;
     if ([collection isKindOfClass:NSArray.class]) {
         result = [NSMutableArray arrayWithCapacity:[collection count]];
-        for (id x in collection) [result addObject:f(x)];
+        for (id x in collection)
+        {
+            id y = f(x);
+            if (y) {
+                [result addObject:y];
+            }
+        }
     } else if ([collection isKindOfClass:NSDictionary.class]) {
         result = [NSMutableDictionary dictionaryWithCapacity:[collection count]];
         for (id key in collection) [result setObject:f([collection objectForKey:key]) forKey:key];

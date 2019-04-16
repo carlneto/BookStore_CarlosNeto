@@ -124,7 +124,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CNBookVolumes : NSObject
 @property (nonatomic, copy)   NSString *kind;
 @property (nonatomic, assign) NSInteger totalItems;
-@property (nonatomic, copy)   NSArray<CNItem *> *items;
+@property (nonatomic, copy)   NSMutableArray<CNItem *> *items;
 
 + (_Nullable instancetype)fromJSON:(NSString *)json encoding:(NSStringEncoding)encoding error:(NSError *_Nullable *)error;
 + (_Nullable instancetype)fromData:(NSData *)data error:(NSError *_Nullable *)error;
