@@ -34,15 +34,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Yh7-0L-8bj" userLabel="Header View">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show only favorites?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrd-Iv-lcr" userLabel="Favorites Label">
+                                    <rect key="frame" x="12" y="11.5" width="313" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hee-CT-NDp" userLabel="Favorites Switch">
+                                    <rect key="frame" x="313" y="7" width="52" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="3Vg-gH-8xl"/>
+                                        <constraint firstAttribute="width" constant="50" id="QEP-TH-nlu"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="favSwitchAction:" destination="grb-Pp-pIX" eventType="valueChanged" id="rFk-08-6Cq"/>
+                                    </connections>
+                                </switch>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Hee-CT-NDp" secondAttribute="trailing" constant="12" id="N35-MV-1Xd"/>
+                                <constraint firstItem="Mrd-Iv-lcr" firstAttribute="centerY" secondItem="Yh7-0L-8bj" secondAttribute="centerY" id="PeL-V0-Z8f"/>
+                                <constraint firstItem="Hee-CT-NDp" firstAttribute="centerY" secondItem="Yh7-0L-8bj" secondAttribute="centerY" id="Vos-MC-aEO"/>
+                                <constraint firstItem="Mrd-Iv-lcr" firstAttribute="trailing" secondItem="Hee-CT-NDp" secondAttribute="leading" constant="12" id="o1r-mn-rLL"/>
+                                <constraint firstItem="Mrd-Iv-lcr" firstAttribute="leading" secondItem="Yh7-0L-8bj" secondAttribute="leading" constant="12" id="sYK-v3-cxM"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookCell" id="LGy-pc-vi6" customClass="BookTableViewCell">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LGy-pc-vi6" id="DSO-Ox-pYd">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3s-ly-WyK" userLabel="FavBtn">
+                                        <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3s-ly-WyK" userLabel="FavBtn">
                                             <rect key="frame" x="0.0" y="7" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="FnX-bm-7lM"/>
@@ -52,18 +82,18 @@
                                                 <action selector="favBtnAction" destination="LGy-pc-vi6" eventType="touchUpInside" id="puy-ld-I0U"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1J-yb-wda" userLabel="TitleLbl">
-                                            <rect key="frame" x="30" y="11.5" width="283" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1J-yb-wda" userLabel="TitleLbl">
+                                            <rect key="frame" x="34" y="13" width="287" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.089621508459999999" green="0.45185995229999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFU-bX-ciA" userLabel="PriceLbl">
-                                            <rect key="frame" x="313" y="11.5" width="50" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFU-bX-ciA" userLabel="PriceLbl">
+                                            <rect key="frame" x="321" y="13" width="50" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="eLq-9y-JNh"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -71,9 +101,9 @@
                                     <constraints>
                                         <constraint firstItem="A3s-ly-WyK" firstAttribute="leading" secondItem="DSO-Ox-pYd" secondAttribute="leading" id="3UP-jR-LMY"/>
                                         <constraint firstItem="tFU-bX-ciA" firstAttribute="leading" secondItem="Y1J-yb-wda" secondAttribute="trailing" id="5uT-Dg-eAU"/>
-                                        <constraint firstItem="Y1J-yb-wda" firstAttribute="leading" secondItem="A3s-ly-WyK" secondAttribute="trailing" id="Emo-zq-U6g"/>
+                                        <constraint firstItem="Y1J-yb-wda" firstAttribute="leading" secondItem="A3s-ly-WyK" secondAttribute="trailing" constant="4" id="Emo-zq-U6g"/>
                                         <constraint firstItem="Y1J-yb-wda" firstAttribute="centerY" secondItem="DSO-Ox-pYd" secondAttribute="centerY" id="FVG-Ke-fp2"/>
-                                        <constraint firstAttribute="trailing" secondItem="tFU-bX-ciA" secondAttribute="trailing" constant="12" id="KoI-AK-7ve"/>
+                                        <constraint firstAttribute="trailing" secondItem="tFU-bX-ciA" secondAttribute="trailing" constant="4" id="KoI-AK-7ve"/>
                                         <constraint firstItem="A3s-ly-WyK" firstAttribute="centerY" secondItem="DSO-Ox-pYd" secondAttribute="centerY" id="SJ9-MA-GpJ"/>
                                         <constraint firstItem="tFU-bX-ciA" firstAttribute="centerY" secondItem="DSO-Ox-pYd" secondAttribute="centerY" id="yOD-Jb-3a3"/>
                                     </constraints>
@@ -93,6 +123,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="1NM-2E-KeK"/>
                     <connections>
+                        <outlet property="favSwitch" destination="Hee-CT-NDp" id="sSM-YG-2Tu"/>
                         <outlet property="volumesTableView" destination="Dji-sc-ZjE" id="2GJ-UU-wE1"/>
                     </connections>
                 </tableViewController>

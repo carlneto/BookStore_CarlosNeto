@@ -11,6 +11,4 @@
 
 @interface MainViewController : UITableViewController
 
-@property CNBookVolumes *volumes;
-
 @end

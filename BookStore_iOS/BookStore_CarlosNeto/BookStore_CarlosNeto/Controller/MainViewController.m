@@ -13,6 +13,10 @@
 @interface MainViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *volumesTableView;
+@property (weak, nonatomic) IBOutlet UISwitch *favSwitch;
+
+@property CNBookVolumes *volumes;
+@property NSMutableArray<CNItem*> *tableItems;
 @property (atomic) int startIndex;
 @property int maxResults;
 
@@ -26,11 +30,15 @@
     self.title = @"Books List";
     _startIndex = 0;
     _maxResults = 20;
+    [_favSwitch setOn:NO];
     [self getBookVolumes];
 }
 
 - (void)getBookVolumes
 {
+    if (_favSwitch.isOn) {
+        return;
+    }
     const NSString *urn = @"https://www.googleapis.com/books/v1/volumes";
     NSString *uri = [NSString stringWithFormat:@"%@?q=ios&maxResults=%d&startIndex=%d", urn, _maxResults, _startIndex];
     __weak __typeof(self) zelf = self;
@@ -60,6 +68,16 @@
             [_volumes.items addObject:item];
         }
     }
+    [self setTableDataSource:YES];
+}
+
+- (void)setTableDataSource:(BOOL)all
+{
+    _tableItems = [[NSMutableArray<CNItem*> alloc] init];
+    for (CNItem *item in _volumes.items)
+    {
+        if (all || item.isFavorite) [_tableItems addObject:item];
+    }
     [_volumesTableView reloadData];
 }
 
@@ -70,7 +88,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _volumes.items.count;
+    return _tableItems.count;
 }
 
 #pragma mark - Table view delegate
@@ -78,7 +96,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger row = indexPath.row;
-    CNItem *item = [_volumes items][row];
+    CNItem *item = _tableItems[row];
     BookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookCell" forIndexPath:indexPath];
     [cell setModel:item];
     return cell;
@@ -99,6 +117,11 @@
     {
         [self getBookVolumes];
     }
+}
+
+- (IBAction)favSwitchAction:(UISwitch *)sender
+{
+    [self setTableDataSource:!_favSwitch.isOn];
 }
 
 @end
