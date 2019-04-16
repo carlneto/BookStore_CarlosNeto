@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		28244598AFA07036FD77DF46 /* libPods-BookStore_CarlosNeto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC25E335BE439FE8DE4999B2 /* libPods-BookStore_CarlosNeto.a */; };
 		B63303CA2265CFCF00ACB852 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B63303C92265CFCF00ACB852 /* MainViewController.m */; };
+		B63C99682265E6B50074598E /* CNBookVolumes.m in Sources */ = {isa = PBXBuildFile; fileRef = B63C99672265E6B50074598E /* CNBookVolumes.m */; };
+		B63C996D226606790074598E /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B63C996C226606790074598E /* BookTableViewCell.m */; };
 		B6D0C7BD2264DE6C006DFA10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D0C7BC2264DE6C006DFA10 /* AppDelegate.m */; };
 		B6D0C7C32264DE6C006DFA10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D0C7C12264DE6C006DFA10 /* Main.storyboard */; };
 		B6D0C7C52264DE6D006DFA10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D0C7C42264DE6D006DFA10 /* Assets.xcassets */; };
@@ -21,6 +23,10 @@
 		AC25E335BE439FE8DE4999B2 /* libPods-BookStore_CarlosNeto.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookStore_CarlosNeto.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63303C82265CFCF00ACB852 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		B63303C92265CFCF00ACB852 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		B63C99662265E6B50074598E /* CNBookVolumes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNBookVolumes.h; sourceTree = "<group>"; };
+		B63C99672265E6B50074598E /* CNBookVolumes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CNBookVolumes.m; sourceTree = "<group>"; };
+		B63C996B226606790074598E /* BookTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookTableViewCell.h; sourceTree = "<group>"; };
+		B63C996C226606790074598E /* BookTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookTableViewCell.m; sourceTree = "<group>"; };
 		B6D0C7B82264DE6C006DFA10 /* BookStore_CarlosNeto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStore_CarlosNeto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D0C7BB2264DE6C006DFA10 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B6D0C7BC2264DE6C006DFA10 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -74,6 +80,34 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B63C99652265E6990074598E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B63C99662265E6B50074598E /* CNBookVolumes.h */,
+				B63C99672265E6B50074598E /* CNBookVolumes.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B63C9969226606390074598E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B6D0C7C12264DE6C006DFA10 /* Main.storyboard */,
+				B63C996B226606790074598E /* BookTableViewCell.h */,
+				B63C996C226606790074598E /* BookTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B63C996A226606520074598E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B63303C82265CFCF00ACB852 /* MainViewController.h */,
+				B63303C92265CFCF00ACB852 /* MainViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		B6D0C7AF2264DE6C006DFA10 = {
 			isa = PBXGroup;
 			children = (
@@ -95,9 +129,9 @@
 		B6D0C7BA2264DE6C006DFA10 /* BookStore_CarlosNeto */ = {
 			isa = PBXGroup;
 			children = (
-				B6D0C7C12264DE6C006DFA10 /* Main.storyboard */,
-				B63303C82265CFCF00ACB852 /* MainViewController.h */,
-				B63303C92265CFCF00ACB852 /* MainViewController.m */,
+				B63C9969226606390074598E /* View */,
+				B63C99652265E6990074598E /* Model */,
+				B63C996A226606520074598E /* Controller */,
 				B63303C72265CF8C00ACB852 /* Supporting Files */,
 			);
 			path = BookStore_CarlosNeto;
@@ -199,7 +233,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B63C996D226606790074598E /* BookTableViewCell.m in Sources */,
 				B6D0C7CB2264DE6E006DFA10 /* main.m in Sources */,
+				B63C99682265E6B50074598E /* CNBookVolumes.m in Sources */,
 				B63303CA2265CFCF00ACB852 /* MainViewController.m in Sources */,
 				B6D0C7BD2264DE6C006DFA10 /* AppDelegate.m in Sources */,
 			);
