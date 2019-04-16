@@ -46,11 +46,17 @@
 
 - (void)setBookVolumes:(CNBookVolumes*)bookVolumes
 {
+    
     if (!_volumes) {
+        for (CNItem *item in bookVolumes.items)
+        {
+            item.isFavorite = false;
+        }
         _volumes = bookVolumes;
     } else {
         for (CNItem *item in bookVolumes.items)
         {
+            item.isFavorite = false;
             [_volumes.items addObject:item];
         }
     }
@@ -73,12 +79,8 @@
 {
     NSInteger row = indexPath.row;
     CNItem *item = [_volumes items][row];
-    NSString *title = item.volumeInfo.title;
-    CNSaleInfoListPrice *listPrice = item.saleInfo.listPrice;
-    NSString *price = listPrice ? [NSString stringWithFormat:@"%0.2f %@", listPrice.amount, listPrice.currencyCode.value] : @"---";
-    
     BookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookCell" forIndexPath:indexPath];
-    [cell setTitle:title andPrice:price];
+    [cell setModel:item];
     return cell;
 }
 

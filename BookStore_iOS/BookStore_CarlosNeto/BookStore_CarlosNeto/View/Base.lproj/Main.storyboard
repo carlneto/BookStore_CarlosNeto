@@ -42,8 +42,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3s-ly-WyK" userLabel="FavBtn">
+                                            <rect key="frame" x="0.0" y="7" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="FnX-bm-7lM"/>
+                                                <constraint firstAttribute="width" constant="30" id="UgR-4T-JLG"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="favBtnAction" destination="LGy-pc-vi6" eventType="touchUpInside" id="puy-ld-I0U"/>
+                                            </connections>
+                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1J-yb-wda" userLabel="TitleLbl">
-                                            <rect key="frame" x="12" y="11.5" width="301" height="21"/>
+                                            <rect key="frame" x="30" y="11.5" width="283" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.089621508459999999" green="0.45185995229999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -59,14 +69,17 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="A3s-ly-WyK" firstAttribute="leading" secondItem="DSO-Ox-pYd" secondAttribute="leading" id="3UP-jR-LMY"/>
                                         <constraint firstItem="tFU-bX-ciA" firstAttribute="leading" secondItem="Y1J-yb-wda" secondAttribute="trailing" id="5uT-Dg-eAU"/>
+                                        <constraint firstItem="Y1J-yb-wda" firstAttribute="leading" secondItem="A3s-ly-WyK" secondAttribute="trailing" id="Emo-zq-U6g"/>
                                         <constraint firstItem="Y1J-yb-wda" firstAttribute="centerY" secondItem="DSO-Ox-pYd" secondAttribute="centerY" id="FVG-Ke-fp2"/>
                                         <constraint firstAttribute="trailing" secondItem="tFU-bX-ciA" secondAttribute="trailing" constant="12" id="KoI-AK-7ve"/>
-                                        <constraint firstItem="Y1J-yb-wda" firstAttribute="leading" secondItem="DSO-Ox-pYd" secondAttribute="leading" constant="12" id="jg4-Uu-dmR"/>
+                                        <constraint firstItem="A3s-ly-WyK" firstAttribute="centerY" secondItem="DSO-Ox-pYd" secondAttribute="centerY" id="SJ9-MA-GpJ"/>
                                         <constraint firstItem="tFU-bX-ciA" firstAttribute="centerY" secondItem="DSO-Ox-pYd" secondAttribute="centerY" id="yOD-Jb-3a3"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="favBtn" destination="A3s-ly-WyK" id="UxL-Y7-m3c"/>
                                     <outlet property="priceLbl" destination="tFU-bX-ciA" id="m5k-2m-nxe"/>
                                     <outlet property="titleLbl" destination="Y1J-yb-wda" id="hUd-Sm-Ehv"/>
                                     <segue destination="Kp9-IJ-WZH" kind="showDetail" identifier="BookSegue" id="9lI-9j-tl8"/>
