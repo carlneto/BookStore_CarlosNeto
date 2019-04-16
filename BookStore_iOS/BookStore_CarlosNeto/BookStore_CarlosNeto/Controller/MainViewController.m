@@ -34,53 +34,6 @@
     [self getBookVolumes];
 }
 
-- (void)getBookVolumes
-{
-    if (_favSwitch.isOn) {
-        return;
-    }
-    const NSString *urn = @"https://www.googleapis.com/books/v1/volumes";
-    NSString *uri = [NSString stringWithFormat:@"%@?q=ios&maxResults=%d&startIndex=%d", urn, _maxResults, _startIndex];
-    __weak __typeof(self) zelf = self;
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:uri parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary * responseObject) {
-        CNBookVolumes *bookVolumes = [CNBookVolumes fromJSONDictionary:responseObject];
-        [zelf setBookVolumes:bookVolumes];
-        zelf.startIndex += zelf.maxResults;
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error: %@", error);
-    }];
-}
-
-- (void)setBookVolumes:(CNBookVolumes*)bookVolumes
-{
-    
-    if (!_volumes) {
-        for (CNItem *item in bookVolumes.items)
-        {
-            item.isFavorite = false;
-        }
-        _volumes = bookVolumes;
-    } else {
-        for (CNItem *item in bookVolumes.items)
-        {
-            item.isFavorite = false;
-            [_volumes.items addObject:item];
-        }
-    }
-    [self setTableDataSource:YES];
-}
-
-- (void)setTableDataSource:(BOOL)all
-{
-    _tableItems = [[NSMutableArray<CNItem*> alloc] init];
-    for (CNItem *item in _volumes.items)
-    {
-        if (all || item.isFavorite) [_tableItems addObject:item];
-    }
-    [_volumesTableView reloadData];
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -119,9 +72,55 @@
     }
 }
 
+- (void)getBookVolumes
+{
+    if (_favSwitch.isOn) {
+        return;
+    }
+    const NSString *urn = @"https://www.googleapis.com/books/v1/volumes";
+    NSString *uri = [NSString stringWithFormat:@"%@?q=ios&maxResults=%d&startIndex=%d", urn, _maxResults, _startIndex];
+    __weak __typeof(self) zelf = self;
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:uri parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary * responseObject) {
+        CNBookVolumes *bookVolumes = [CNBookVolumes fromJSONDictionary:responseObject];
+        [zelf setBookVolumes:bookVolumes];
+        zelf.startIndex += zelf.maxResults;
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error: %@", error);
+    }];
+}
+
+- (void)setBookVolumes:(CNBookVolumes*)bookVolumes
+{
+    
+    if (!_volumes) {
+        for (CNItem *item in bookVolumes.items)
+        {
+            item.isFavorite = false;
+        }
+        _volumes = bookVolumes;
+    } else {
+        for (CNItem *item in bookVolumes.items)
+        {
+            item.isFavorite = false;
+            [_volumes.items addObject:item];
+        }
+    }
+    [self setTableDataSource:YES];
+}
+
 - (IBAction)favSwitchAction:(UISwitch *)sender
 {
     [self setTableDataSource:!_favSwitch.isOn];
+}
+
+- (void)setTableDataSource:(BOOL)all
+{
+    _tableItems = [[NSMutableArray<CNItem*> alloc] init];
+    for (CNItem *item in _volumes.items)
+        if (all || item.isFavorite)
+            [_tableItems addObject:item];
+    [_volumesTableView reloadData];
 }
 
 @end
