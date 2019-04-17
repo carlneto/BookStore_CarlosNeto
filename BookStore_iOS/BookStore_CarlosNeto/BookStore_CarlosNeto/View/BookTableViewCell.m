@@ -33,6 +33,8 @@
     UIImage *addedFavorite = [UIImage imageNamed:@"addedFavorite"];
     [_favBtn setImage:addToFavorite forState:UIControlStateNormal];
     [_favBtn setImage:addedFavorite forState:UIControlStateSelected];
+    NSString *favBtnIdentifier = [NSString stringWithFormat:@"%@_master", _item.identifier];
+    _favBtn.accessibilityIdentifier = favBtnIdentifier;
     _titleLbl.text = title;
     _priceLbl.text = price;
 }
@@ -46,6 +48,8 @@
 {
     [_item setFav:isFav];
     [_favBtn setSelected:isFav];
+    NSString *identifier = [NSString stringWithFormat:@"%@_detail", _item.identifier];
+    [[UIButton uiButtonWithId:identifier] setSelected:isFav];
 }
 
 @end

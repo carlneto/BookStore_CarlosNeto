@@ -58,6 +58,7 @@
     UIImage *addedFavorite = [UIImage imageNamed:@"addedFavorite"];
     [_favBtn setImage:addToFavorite forState:UIControlStateNormal];
     [_favBtn setImage:addedFavorite forState:UIControlStateSelected];
+    _favBtn.accessibilityIdentifier = [NSString stringWithFormat:@"%@_detail", _item.identifier];
     
     _titleLbl.text = _item.volumeInfo.title;
     _authorLbl.text = _item.volumeInfo.authors.firstObject;
@@ -74,6 +75,8 @@
 {
     [_item setFav:isFav];
     [_favBtn setSelected:isFav];
+    NSString *identifier = [NSString stringWithFormat:@"%@_master", _item.identifier];
+    [[UIButton uiButtonWithId:identifier] setSelected:isFav];
 }
 
 - (IBAction)favBtnAction:(UIButton *)sender
