@@ -7,12 +7,15 @@
 //
 
 #import "BookTableViewCell.h"
+#import "UIView+Utils.h"
 
 @interface BookTableViewCell()
 
 @property (weak, nonatomic) IBOutlet UIButton *favBtn;
 @property (weak, nonatomic) IBOutlet UILabel *titleLbl;
 @property (weak, nonatomic) IBOutlet UILabel *priceLbl;
+
+@property CNItem *item;
 
 @end
 
@@ -25,7 +28,7 @@
     NSString *title = _item.volumeInfo.title;
     CNSaleInfoListPrice *listPrice = _item.saleInfo.listPrice;
     NSString *price = listPrice ? [NSString stringWithFormat:@"%0.2f %@", listPrice.amount, listPrice.currencyCode.value] : @"---";
-    [self setFavorite:_item.isFavorite];
+    [self setFavorite:[_item isFav]];
     UIImage *addToFavorite = [UIImage imageNamed:@"addToFavorite"];
     UIImage *addedFavorite = [UIImage imageNamed:@"addedFavorite"];
     [_favBtn setImage:addToFavorite forState:UIControlStateNormal];
@@ -36,13 +39,13 @@
 
 - (IBAction)favBtnAction
 {
-    [self setFavorite:!_item.isFavorite];
+    [self setFavorite:![_item isFav]];
 }
 
 - (void)setFavorite:(BOOL)isFav
 {
-    _item.isFavorite = isFav;
-    [_favBtn setSelected:_item.isFavorite];
+    [_item setFav:isFav];
+    [_favBtn setSelected:isFav];
 }
 
 @end

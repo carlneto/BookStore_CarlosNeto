@@ -509,6 +509,9 @@ NSString *_Nullable CNBookVolumesToJSON(CNBookVolumes *volumes, NSStringEncoding
 }
 @end
 
+@interface CNItem()
+@property BOOL isFavorite;
+@end
 @implementation CNItem
 + (NSDictionary<NSString *, NSString *> *)properties
 {
@@ -570,6 +573,16 @@ NSString *_Nullable CNBookVolumesToJSON(CNBookVolumes *volumes, NSStringEncoding
                                      }];
     
     return dict;
+}
+- (void)setFav:(BOOL)isFav
+{
+    [[NSUserDefaults standardUserDefaults] setBool:isFav forKey:_identifier];
+    _isFavorite = isFav;
+}
+- (BOOL)isFav
+{
+    _isFavorite = [[NSUserDefaults standardUserDefaults] boolForKey:_identifier];
+    return _isFavorite;
 }
 @end
 

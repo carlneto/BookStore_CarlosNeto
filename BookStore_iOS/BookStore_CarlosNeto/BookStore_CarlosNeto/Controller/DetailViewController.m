@@ -7,14 +7,17 @@
 //
 
 #import "DetailViewController.h"
+#import "UIView+Utils.h"
 
 @interface DetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *favBtn;
 @property (weak, nonatomic) IBOutlet UILabel *titleLbl;
 @property (weak, nonatomic) IBOutlet UILabel *authorLbl;
 @property (weak, nonatomic) IBOutlet UILabel *infoLbl;
 @property (weak, nonatomic) IBOutlet UIButton *linkBtn;
 
+@property (weak, nonatomic) IBOutlet UIView *favView;
 @property (weak, nonatomic) IBOutlet UIView *titleView;
 @property (weak, nonatomic) IBOutlet UIView *authorView;
 @property (weak, nonatomic) IBOutlet UIView *infoView;
@@ -43,12 +46,18 @@
     [_authorView setHidden:YES];
     [_infoView setHidden:YES];
     [_linkView setHidden:YES];
-    _linkBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    _linkBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
 }
 
 - (void)setupUI:(CNItem*)cnItem
 {
     _item = cnItem;
+    
+    [self setFavorite:[_item isFav]];
+    UIImage *addToFavorite = [UIImage imageNamed:@"addToFavorite"];
+    UIImage *addedFavorite = [UIImage imageNamed:@"addedFavorite"];
+    [_favBtn setImage:addToFavorite forState:UIControlStateNormal];
+    [_favBtn setImage:addedFavorite forState:UIControlStateSelected];
     
     _titleLbl.text = _item.volumeInfo.title;
     _authorLbl.text = _item.volumeInfo.authors.firstObject;
@@ -59,6 +68,17 @@
     [_authorView setHidden:!_authorLbl.text.length];
     [_infoView setHidden:!_infoLbl.text.length];
     [_linkView setHidden:!_linkBtn.titleLabel.text.length];
+}
+
+- (void)setFavorite:(BOOL)isFav
+{
+    [_item setFav:isFav];
+    [_favBtn setSelected:isFav];
+}
+
+- (IBAction)favBtnAction:(UIButton *)sender
+{
+    [self setFavorite:![_item isFav]];
 }
 
 - (IBAction)linkBtnAction:(UIButton *)sender

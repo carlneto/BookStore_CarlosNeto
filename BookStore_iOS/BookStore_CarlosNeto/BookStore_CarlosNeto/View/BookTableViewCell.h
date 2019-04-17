@@ -13,8 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BookTableViewCell : UITableViewCell
 
-@property CNItem *item;
-
 - (void)setModel:(CNItem*)model;
 
 @end

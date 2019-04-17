@@ -36,6 +36,13 @@
     [self getBookVolumes];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if ([self.splitViewController isCollapsed])
+        [_volumesTableView reloadData];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -102,17 +109,16 @@
 
 - (void)setBookVolumes:(CNBookVolumes*)bookVolumes
 {
-    
     if (!_volumes) {
         for (CNItem *item in bookVolumes.items)
         {
-            item.isFavorite = false;
+            [item isFav];
         }
         _volumes = bookVolumes;
     } else {
         for (CNItem *item in bookVolumes.items)
         {
-            item.isFavorite = false;
+            [item isFav];
             [_volumes.items addObject:item];
         }
     }
@@ -128,7 +134,7 @@
 {
     _tableItems = [[NSMutableArray<CNItem*> alloc] init];
     for (CNItem *item in _volumes.items)
-        if (all || item.isFavorite)
+        if (all || [item isFav])
             [_tableItems addObject:item];
     [_volumesTableView reloadData];
 }

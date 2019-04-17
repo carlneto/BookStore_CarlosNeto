@@ -12,6 +12,7 @@
 		B63C99682265E6B50074598E /* CNBookVolumes.m in Sources */ = {isa = PBXBuildFile; fileRef = B63C99672265E6B50074598E /* CNBookVolumes.m */; };
 		B63C996D226606790074598E /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B63C996C226606790074598E /* BookTableViewCell.m */; };
 		B657EF72226658EF0012E23D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B657EF71226658EF0012E23D /* DetailViewController.m */; };
+		B682C9DD22673D3F00963BAC /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B682C9DC22673D3F00963BAC /* UIView+Utils.m */; };
 		B6D0C7BD2264DE6C006DFA10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D0C7BC2264DE6C006DFA10 /* AppDelegate.m */; };
 		B6D0C7C32264DE6C006DFA10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D0C7C12264DE6C006DFA10 /* Main.storyboard */; };
 		B6D0C7C52264DE6D006DFA10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D0C7C42264DE6D006DFA10 /* Assets.xcassets */; };
@@ -30,6 +31,8 @@
 		B63C996C226606790074598E /* BookTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookTableViewCell.m; sourceTree = "<group>"; };
 		B657EF70226658EF0012E23D /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		B657EF71226658EF0012E23D /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		B682C9DB22673D3F00963BAC /* UIView+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
+		B682C9DC22673D3F00963BAC /* UIView+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
 		B6D0C7B82264DE6C006DFA10 /* BookStore_CarlosNeto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStore_CarlosNeto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D0C7BB2264DE6C006DFA10 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B6D0C7BC2264DE6C006DFA10 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -75,6 +78,8 @@
 			children = (
 				B6D0C7BB2264DE6C006DFA10 /* AppDelegate.h */,
 				B6D0C7BC2264DE6C006DFA10 /* AppDelegate.m */,
+				B682C9DB22673D3F00963BAC /* UIView+Utils.h */,
+				B682C9DC22673D3F00963BAC /* UIView+Utils.m */,
 				B6D0C7C42264DE6D006DFA10 /* Assets.xcassets */,
 				B6D0C7C62264DE6D006DFA10 /* LaunchScreen.storyboard */,
 				B6D0C7C92264DE6D006DFA10 /* Info.plist */,
@@ -239,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B63C996D226606790074598E /* BookTableViewCell.m in Sources */,
+				B682C9DD22673D3F00963BAC /* UIView+Utils.m in Sources */,
 				B6D0C7CB2264DE6E006DFA10 /* main.m in Sources */,
 				B63C99682265E6B50074598E /* CNBookVolumes.m in Sources */,
 				B63303CA2265CFCF00ACB852 /* MainViewController.m in Sources */,

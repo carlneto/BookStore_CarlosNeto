@@ -142,7 +142,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)           CNSaleInfo *saleInfo;
 @property (nonatomic, strong)           CNAccessInfo *accessInfo;
 @property (nonatomic, nullable, strong) CNSearchInfo *searchInfo;
-@property BOOL isFavorite;
+- (void)setFav:(BOOL)isFav;
+- (BOOL)isFav;
 @end
 
 @interface CNAccessInfo : NSObject
