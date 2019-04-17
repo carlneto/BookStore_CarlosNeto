@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailViewController.h"
 #import "CNBookVolumes.h"
 
 @interface MainViewController : UITableViewController
+
+@property DetailViewController *detailVC;
 
 @end

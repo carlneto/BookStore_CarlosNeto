@@ -14,8 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLbl;
 @property (weak, nonatomic) IBOutlet UILabel *priceLbl;
 
-@property CNItem *item;
-
 @end
 
 

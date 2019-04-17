@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "BookTableViewCell.h"
+#import "DetailViewController.h"
 
 @interface MainViewController ()
 
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *favSwitch;
 
 @property CNBookVolumes *volumes;
+@property CNItem *selectedItem;
 @property NSMutableArray<CNItem*> *tableItems;
 @property (atomic) int startIndex;
 @property int maxResults;
@@ -53,6 +55,14 @@
     BookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookCell" forIndexPath:indexPath];
     [cell setModel:item];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger row = indexPath.row;
+    [_detailVC setupUI:_tableItems[row]];
+    if ([self.splitViewController isCollapsed])
+        [self.splitViewController showDetailViewController:_detailVC sender:self];
 }
 
 - (BOOL)isLastIndex:(NSIndexPath *)indexPath

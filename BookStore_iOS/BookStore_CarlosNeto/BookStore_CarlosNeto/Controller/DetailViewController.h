@@ -1,5 +1,5 @@
 //
-//  BookTableViewCell.h
+//  DetailViewController.h
 //  BookStore_CarlosNeto
 //
 //  Created by Carlos Neto on 16/04/2019.
@@ -11,11 +11,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BookTableViewCell : UITableViewCell
+@interface DetailViewController : UIViewController
 
-@property CNItem *item;
-
-- (void)setModel:(CNItem*)model;
+- (void)setupUI:(CNItem*)cnItem;
 
 @end
 
