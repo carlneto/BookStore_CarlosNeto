@@ -36,7 +36,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TitleLbl" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6YZ-SP-xac">
                                                 <rect key="frame" x="0.0" y="29" width="351" height="71"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" red="0.089621508459999999" green="0.45185995229999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -67,7 +67,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AuthorLbl" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwP-ul-RYG">
                                                 <rect key="frame" x="0.0" y="29" width="351" height="71"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" red="0.089621508459999999" green="0.45185995229999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -98,7 +98,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DescriptionLbl" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kby-cV-Igu">
                                                 <rect key="frame" x="0.0" y="29" width="351" height="71"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" red="0.089621508459999999" green="0.45185995229999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -126,23 +126,24 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LinkLbl" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91y-NG-VCt">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnS-5R-I9X" userLabel="Link Btn">
                                                 <rect key="frame" x="0.0" y="41" width="351" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="LGC-yZ-IsR"/>
+                                                    <constraint firstAttribute="height" constant="40" id="Jfp-1b-QAb"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <state key="normal" title="Link Btn"/>
+                                                <connections>
+                                                    <action selector="linkBtnAction:" destination="ccD-d6-Vvw" eventType="touchUpInside" id="vN0-1m-jxB"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="XK9-fF-A6j" secondAttribute="trailing" id="66b-Dz-2hd"/>
+                                            <constraint firstItem="mnS-5R-I9X" firstAttribute="leading" secondItem="cJK-JY-R4A" secondAttribute="leading" id="FBp-0g-AcE"/>
                                             <constraint firstItem="XK9-fF-A6j" firstAttribute="top" secondItem="cJK-JY-R4A" secondAttribute="top" id="IeV-lC-yyZ"/>
-                                            <constraint firstItem="91y-NG-VCt" firstAttribute="top" secondItem="XK9-fF-A6j" secondAttribute="bottom" constant="20" id="ReE-bK-wXF"/>
-                                            <constraint firstAttribute="trailing" secondItem="91y-NG-VCt" secondAttribute="trailing" id="ZpC-XR-vmm"/>
-                                            <constraint firstItem="91y-NG-VCt" firstAttribute="leading" secondItem="cJK-JY-R4A" secondAttribute="leading" id="j7X-q3-P44"/>
+                                            <constraint firstAttribute="trailing" secondItem="mnS-5R-I9X" secondAttribute="trailing" id="RvW-L0-DKE"/>
+                                            <constraint firstItem="mnS-5R-I9X" firstAttribute="top" secondItem="XK9-fF-A6j" secondAttribute="bottom" constant="20" id="i2t-DK-k2V"/>
                                             <constraint firstItem="XK9-fF-A6j" firstAttribute="leading" secondItem="cJK-JY-R4A" secondAttribute="leading" id="vdH-gX-vjL"/>
                                         </constraints>
                                     </view>
@@ -164,7 +165,7 @@
                         <outlet property="authorView" destination="jwv-IU-QaJ" id="Y4b-mX-byU"/>
                         <outlet property="infoLbl" destination="kby-cV-Igu" id="LAT-Wm-zzL"/>
                         <outlet property="infoView" destination="aKA-2i-8b4" id="980-hd-f4w"/>
-                        <outlet property="linkLbl" destination="91y-NG-VCt" id="0LA-t5-To1"/>
+                        <outlet property="linkBtn" destination="mnS-5R-I9X" id="hGY-Sd-Cwr"/>
                         <outlet property="linkView" destination="cJK-JY-R4A" id="mli-Tq-ZSZ"/>
                         <outlet property="titleLbl" destination="6YZ-SP-xac" id="quL-9T-btf"/>
                         <outlet property="titleView" destination="pW0-f8-Zcb" id="PNo-XQ-zin"/>

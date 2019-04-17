@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLbl;
 @property (weak, nonatomic) IBOutlet UILabel *authorLbl;
 @property (weak, nonatomic) IBOutlet UILabel *infoLbl;
-@property (weak, nonatomic) IBOutlet UILabel *linkLbl;
+@property (weak, nonatomic) IBOutlet UIButton *linkBtn;
 
 @property (weak, nonatomic) IBOutlet UIView *titleView;
 @property (weak, nonatomic) IBOutlet UIView *authorView;
@@ -38,11 +38,12 @@
     _titleLbl.text = @"";
     _authorLbl.text = @"";
     _infoLbl.text = @"";
-    _linkLbl.text = @"";
+    [_linkBtn setTitle:@"" forState:UIControlStateNormal];
     [_titleView setHidden:YES];
     [_authorView setHidden:YES];
     [_infoView setHidden:YES];
     [_linkView setHidden:YES];
+    _linkBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
 }
 
 - (void)setupUI:(CNItem*)cnItem
@@ -52,12 +53,18 @@
     _titleLbl.text = _item.volumeInfo.title;
     _authorLbl.text = _item.volumeInfo.authors.firstObject;
     _infoLbl.text = _item.volumeInfo.theDescription;
-    _linkLbl.text = _item.volumeInfo.infoLink;
+    [_linkBtn setTitle:_item.volumeInfo.infoLink forState:UIControlStateNormal];
     
     [_titleView setHidden:!_titleLbl.text.length];
     [_authorView setHidden:!_authorLbl.text.length];
     [_infoView setHidden:!_infoLbl.text.length];
-    [_linkView setHidden:!_linkLbl.text.length];
+    [_linkView setHidden:!_linkBtn.titleLabel.text.length];
+}
+
+- (IBAction)linkBtnAction:(UIButton *)sender
+{
+    NSURL *url = [NSURL URLWithString:_linkBtn.titleLabel.text];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 @end
