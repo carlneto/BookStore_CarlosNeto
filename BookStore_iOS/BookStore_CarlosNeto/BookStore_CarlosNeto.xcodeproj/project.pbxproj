@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		117FC171D2B1C0EF0C786E0D /* Pods_BookStore_CarlosNeto_BookStore_CarlosNetoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B4B8D3E6C32DFFBA4C2EF2 /* Pods_BookStore_CarlosNeto_BookStore_CarlosNetoUITests.framework */; };
 		AFB46F0A240D919E00B22913 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFB46F09240D919E00B22913 /* Default-568h@2x.png */; };
 		AFC2F643240D9454003504BC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2F642240D9454003504BC /* Extensions.swift */; };
 		AFD92BC4240D8C6D00E505BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD92BC3240D8C6D00E505BA /* AppDelegate.swift */; };
@@ -32,8 +31,6 @@
 		AFD92C10240D8EC600E505BA /* SaleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD92C0F240D8EC600E505BA /* SaleInfo.swift */; };
 		AFD92C12240D8ED900E505BA /* SearchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD92C11240D8ED900E505BA /* SearchInfo.swift */; };
 		AFD92C14240D8EE900E505BA /* VolumeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD92C13240D8EE900E505BA /* VolumeInfo.swift */; };
-		D79ECFCFED366926BC059F77 /* Pods_BookStore_CarlosNeto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4B4523E6541093AF662233 /* Pods_BookStore_CarlosNeto.framework */; };
-		F7EC4D4963DBDCF1A7BD078C /* Pods_BookStore_CarlosNetoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70F69843033DD70AFA47165 /* Pods_BookStore_CarlosNetoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,12 +51,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01AB790E034341610D6F120E /* Pods-BookStore_CarlosNetoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStore_CarlosNetoTests.release.xcconfig"; path = "Target Support Files/Pods-BookStore_CarlosNetoTests/Pods-BookStore_CarlosNetoTests.release.xcconfig"; sourceTree = "<group>"; };
-		2C4B4523E6541093AF662233 /* Pods_BookStore_CarlosNeto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookStore_CarlosNeto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		30B4B8D3E6C32DFFBA4C2EF2 /* Pods_BookStore_CarlosNeto_BookStore_CarlosNetoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookStore_CarlosNeto_BookStore_CarlosNetoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B92C495B162756A9886D45F /* Pods-BookStore_CarlosNeto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStore_CarlosNeto.debug.xcconfig"; path = "Target Support Files/Pods-BookStore_CarlosNeto/Pods-BookStore_CarlosNeto.debug.xcconfig"; sourceTree = "<group>"; };
-		79F3D6226C7109BFDA09191B /* Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests.debug.xcconfig"; path = "Target Support Files/Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests/Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		8AA8A153A9B01876000FB498 /* Pods-BookStore_CarlosNetoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStore_CarlosNetoTests.debug.xcconfig"; path = "Target Support Files/Pods-BookStore_CarlosNetoTests/Pods-BookStore_CarlosNetoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AFB46F09240D919E00B22913 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AFC2F642240D9454003504BC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AFD92BC0240D8C6D00E505BA /* BookStore_CarlosNeto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStore_CarlosNeto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,9 +81,6 @@
 		AFD92C0F240D8EC600E505BA /* SaleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleInfo.swift; sourceTree = "<group>"; };
 		AFD92C11240D8ED900E505BA /* SearchInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInfo.swift; sourceTree = "<group>"; };
 		AFD92C13240D8EE900E505BA /* VolumeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeInfo.swift; sourceTree = "<group>"; };
-		C70F69843033DD70AFA47165 /* Pods_BookStore_CarlosNetoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookStore_CarlosNetoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEBEFEE56EA07572D41BE826 /* Pods-BookStore_CarlosNeto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStore_CarlosNeto.release.xcconfig"; path = "Target Support Files/Pods-BookStore_CarlosNeto/Pods-BookStore_CarlosNeto.release.xcconfig"; sourceTree = "<group>"; };
-		E9C66F5B721F31849642A78B /* Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests.release.xcconfig"; path = "Target Support Files/Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests/Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D79ECFCFED366926BC059F77 /* Pods_BookStore_CarlosNeto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7EC4D4963DBDCF1A7BD078C /* Pods_BookStore_CarlosNetoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +102,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				117FC171D2B1C0EF0C786E0D /* Pods_BookStore_CarlosNeto_BookStore_CarlosNetoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,36 +111,18 @@
 		781DB0A207042CF231BD4EAF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5B92C495B162756A9886D45F /* Pods-BookStore_CarlosNeto.debug.xcconfig */,
-				CEBEFEE56EA07572D41BE826 /* Pods-BookStore_CarlosNeto.release.xcconfig */,
-				79F3D6226C7109BFDA09191B /* Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests.debug.xcconfig */,
-				E9C66F5B721F31849642A78B /* Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests.release.xcconfig */,
-				8AA8A153A9B01876000FB498 /* Pods-BookStore_CarlosNetoTests.debug.xcconfig */,
-				01AB790E034341610D6F120E /* Pods-BookStore_CarlosNetoTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		8E78DC7C203FA5CC52BCE4A2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2C4B4523E6541093AF662233 /* Pods_BookStore_CarlosNeto.framework */,
-				30B4B8D3E6C32DFFBA4C2EF2 /* Pods_BookStore_CarlosNeto_BookStore_CarlosNetoUITests.framework */,
-				C70F69843033DD70AFA47165 /* Pods_BookStore_CarlosNetoTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		AFD92BB7240D8C6D00E505BA = {
 			isa = PBXGroup;
 			children = (
-				AFB46F09240D919E00B22913 /* Default-568h@2x.png */,
 				AFD92BC2240D8C6D00E505BA /* BookStore_CarlosNeto */,
 				AFD92BD9240D8C7100E505BA /* BookStore_CarlosNetoTests */,
 				AFD92BE4240D8C7100E505BA /* BookStore_CarlosNetoUITests */,
 				AFD92BC1240D8C6D00E505BA /* Products */,
 				781DB0A207042CF231BD4EAF /* Pods */,
-				8E78DC7C203FA5CC52BCE4A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				AFD92BD1240D8C7100E505BA /* Info.plist */,
+				AFB46F09240D919E00B22913 /* Default-568h@2x.png */,
 				AFD92BCE240D8C7100E505BA /* LaunchScreen.storyboard */,
 				AFD92BCC240D8C7100E505BA /* Assets.xcassets */,
 				AFD92BC3240D8C6D00E505BA /* AppDelegate.swift */,
@@ -255,11 +223,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFD92BEA240D8C7100E505BA /* Build configuration list for PBXNativeTarget "BookStore_CarlosNeto" */;
 			buildPhases = (
-				E38D09D9423291A3C9A58BE8 /* [CP] Check Pods Manifest.lock */,
 				AFD92BBC240D8C6D00E505BA /* Sources */,
 				AFD92BBD240D8C6D00E505BA /* Frameworks */,
 				AFD92BBE240D8C6D00E505BA /* Resources */,
-				7097888F5610AEE187248BAF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -274,7 +240,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFD92BED240D8C7100E505BA /* Build configuration list for PBXNativeTarget "BookStore_CarlosNetoTests" */;
 			buildPhases = (
-				7B8659CE7714A80C952A01FD /* [CP] Check Pods Manifest.lock */,
 				AFD92BD2240D8C7100E505BA /* Sources */,
 				AFD92BD3240D8C7100E505BA /* Frameworks */,
 				AFD92BD4240D8C7100E505BA /* Resources */,
@@ -293,11 +258,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFD92BF0240D8C7100E505BA /* Build configuration list for PBXNativeTarget "BookStore_CarlosNetoUITests" */;
 			buildPhases = (
-				3A69EFA13F509938C8CA063F /* [CP] Check Pods Manifest.lock */,
 				AFD92BDD240D8C7100E505BA /* Sources */,
 				AFD92BDE240D8C7100E505BA /* Frameworks */,
 				AFD92BDF240D8C7100E505BA /* Resources */,
-				C9ABD9DA02BB6FBDC90382A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -380,109 +343,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		3A69EFA13F509938C8CA063F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7097888F5610AEE187248BAF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BookStore_CarlosNeto/Pods-BookStore_CarlosNeto-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BookStore_CarlosNeto/Pods-BookStore_CarlosNeto-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookStore_CarlosNeto/Pods-BookStore_CarlosNeto-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7B8659CE7714A80C952A01FD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BookStore_CarlosNetoTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C9ABD9DA02BB6FBDC90382A1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests/Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests/Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests/Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E38D09D9423291A3C9A58BE8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BookStore_CarlosNeto-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		AFD92BBC240D8C6D00E505BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -560,66 +420,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		AFD92BE8240D8C7100E505BA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
 		AFD92BE9240D8C7100E505BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -674,28 +474,8 @@
 			};
 			name = Release;
 		};
-		AFD92BEB240D8C7100E505BA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B92C495B162756A9886D45F /* Pods-BookStore_CarlosNeto.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3Q75G44A33;
-				INFOPLIST_FILE = "$(SRCROOT)/BookStore_CarlosNeto/SupportingFiles/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "pt.carlneto.BookStore-CarlosNeto";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		AFD92BEC240D8C7100E505BA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CEBEFEE56EA07572D41BE826 /* Pods-BookStore_CarlosNeto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -705,39 +485,16 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "pt.carlneto.BookStore-CarlosNeto";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
-		};
-		AFD92BEE240D8C7100E505BA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8AA8A153A9B01876000FB498 /* Pods-BookStore_CarlosNetoTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3Q75G44A33;
-				INFOPLIST_FILE = BookStore_CarlosNetoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "pt.carlneto.BookStore-CarlosNetoTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BookStore_CarlosNeto.app/BookStore_CarlosNeto";
-			};
-			name = Debug;
 		};
 		AFD92BEF240D8C7100E505BA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 01AB790E034341610D6F120E /* Pods-BookStore_CarlosNetoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -758,30 +515,8 @@
 			};
 			name = Release;
 		};
-		AFD92BF1240D8C7100E505BA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79F3D6226C7109BFDA09191B /* Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3Q75G44A33;
-				INFOPLIST_FILE = BookStore_CarlosNetoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "pt.carlneto.BookStore-CarlosNetoUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BookStore_CarlosNeto;
-			};
-			name = Debug;
-		};
 		AFD92BF2240D8C7100E505BA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E9C66F5B721F31849642A78B /* Pods-BookStore_CarlosNeto-BookStore_CarlosNetoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -806,7 +541,6 @@
 		AFD92BBB240D8C6D00E505BA /* Build configuration list for PBXProject "BookStore_CarlosNeto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AFD92BE8240D8C7100E505BA /* Debug */,
 				AFD92BE9240D8C7100E505BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -815,7 +549,6 @@
 		AFD92BEA240D8C7100E505BA /* Build configuration list for PBXNativeTarget "BookStore_CarlosNeto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AFD92BEB240D8C7100E505BA /* Debug */,
 				AFD92BEC240D8C7100E505BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -824,7 +557,6 @@
 		AFD92BED240D8C7100E505BA /* Build configuration list for PBXNativeTarget "BookStore_CarlosNetoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AFD92BEE240D8C7100E505BA /* Debug */,
 				AFD92BEF240D8C7100E505BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -833,7 +565,6 @@
 		AFD92BF0240D8C7100E505BA /* Build configuration list for PBXNativeTarget "BookStore_CarlosNetoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AFD92BF1240D8C7100E505BA /* Debug */,
 				AFD92BF2240D8C7100E505BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
