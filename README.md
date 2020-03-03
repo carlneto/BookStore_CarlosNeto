@@ -1,2 +1,14 @@
 # BookStore_CarlosNeto
-Book Store
+- iOS Book Store books list
+
+## Requirements
+- Xcode 11+
+- Swift 5+
+
+## Installation
+
+### Manually
+- Run in iPhone or iPad simulators
+
+## License
+BookStore_CarlosNeto is released under the MIT license.
