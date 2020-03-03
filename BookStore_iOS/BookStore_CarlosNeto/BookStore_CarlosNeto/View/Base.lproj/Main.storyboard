@@ -118,7 +118,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DescriptionLbl" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Oh-b0-vl4">
-                                                <rect key="frame" x="0.0" y="29" width="390" height="411"/>
+                                                <rect key="frame" x="0.0" y="29" width="390" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -129,7 +129,7 @@
                                         <constraints>
                                             <constraint firstItem="8HX-bR-SuE" firstAttribute="top" secondItem="YXl-aW-3GA" secondAttribute="top" id="F0S-fV-QhQ"/>
                                             <constraint firstAttribute="trailing" secondItem="8HX-bR-SuE" secondAttribute="trailing" id="Fyx-My-lOe"/>
-                                            <constraint firstAttribute="bottom" secondItem="7Oh-b0-vl4" secondAttribute="bottom" id="IF8-9p-kMn"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7Oh-b0-vl4" secondAttribute="bottom" id="IF8-9p-kMn"/>
                                             <constraint firstItem="7Oh-b0-vl4" firstAttribute="top" secondItem="8HX-bR-SuE" secondAttribute="bottom" constant="8" id="Ulk-b7-ftv"/>
                                             <constraint firstAttribute="trailing" secondItem="7Oh-b0-vl4" secondAttribute="trailing" id="ZWR-HF-K0D"/>
                                             <constraint firstItem="7Oh-b0-vl4" firstAttribute="leading" secondItem="YXl-aW-3GA" secondAttribute="leading" id="cgS-TD-Zb3"/>
@@ -176,15 +176,15 @@
                     <navigationItem key="navigationItem" id="YdA-h0-97O"/>
                     <connections>
                         <outlet property="authorLbl" destination="58q-nR-rkE" id="1os-Cb-fxJ"/>
-                        <outlet property="authorView" destination="ZH0-Sa-1hu" id="xqt-be-GEt"/>
+                        <outlet property="authorTag" destination="i76-dv-hdy" id="e0u-pe-490"/>
                         <outlet property="favBtn" destination="fSr-cp-xgQ" id="GLp-EC-Pqn"/>
                         <outlet property="favView" destination="Ifm-Fn-kbc" id="qkw-g2-6Qi"/>
                         <outlet property="infoLbl" destination="7Oh-b0-vl4" id="8m5-c6-4Hl"/>
-                        <outlet property="infoView" destination="YXl-aW-3GA" id="ato-uf-oJh"/>
+                        <outlet property="infoTag" destination="8HX-bR-SuE" id="sYJ-2m-gf2"/>
                         <outlet property="linkBtn" destination="ILh-NI-RN6" id="sgW-oW-rke"/>
                         <outlet property="linkView" destination="dPo-ZR-e5B" id="ttw-6r-uyG"/>
                         <outlet property="titleLbl" destination="z7I-vB-lIH" id="cFr-3o-OoR"/>
-                        <outlet property="titleView" destination="ybf-ac-Bic" id="pfj-Eq-VJP"/>
+                        <outlet property="titleTag" destination="bTH-LX-sx5" id="y8d-68-Ddz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBJ-t7-a3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -195,7 +195,7 @@
         <scene sceneID="Qhs-RE-6st">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="xGz-4f-FQY" customClass="MasterViewController" customModule="BookStore_CarlosNeto" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QvX-tQ-aPl">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QvX-tQ-aPl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -230,11 +230,11 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookCell" id="uvr-9Y-UEq" customClass="BookTableViewCell" customModule="BookStore_CarlosNeto" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BookCell" id="uvr-9Y-UEq" customClass="BookTableViewCell" customModule="BookStore_CarlosNeto" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uvr-9Y-UEq" id="f5G-9v-lKH">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2v-kD-zGG" userLabel="FavBtn">

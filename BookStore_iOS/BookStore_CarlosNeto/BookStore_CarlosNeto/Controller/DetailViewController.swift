@@ -16,9 +16,9 @@ class DetailViewController: UIViewController {
     @IBOutlet private weak var infoLbl: UILabel!
     @IBOutlet private weak var linkBtn: UIButton!
     @IBOutlet private weak var favView: UIView!
-    @IBOutlet private weak var titleView: UIView!
-    @IBOutlet private weak var authorView: UIView!
-    @IBOutlet private weak var infoView: UIView!
+    @IBOutlet private weak var titleTag: UILabel!
+    @IBOutlet private weak var authorTag: UILabel!
+    @IBOutlet private weak var infoTag: UILabel!
     @IBOutlet private weak var linkView: UIView!
     
     private var item: Item?
@@ -26,7 +26,6 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Book Item"
-
         if item == nil, let nav = splitViewController?.viewControllers.last as? UINavigationController {
             nav.popViewController(animated: true)
         }
@@ -34,49 +33,53 @@ class DetailViewController: UIViewController {
         authorLbl.text = ""
         infoLbl.text = ""
         linkBtn.setTitle("", for: .normal)
-        titleView.isHidden = true
-        authorView.isHidden = true
-        infoView.isHidden = true
-        linkView.isHidden = true
         linkBtn.contentHorizontalAlignment = .right
+        setTags()
     }
     
-    func setupUI(_ item: Item?) {
+    func setupUI(item: Item?) {
         self.item = item
-
-        setFavorite(self.item?.isFavorite ?? false)
+        setFavorite(isFavorite: self.item?.isFavorite ?? false)
         let addToFavorite = UIImage(named: "addToFavorite")
         let addedFavorite = UIImage(named: "addedFavorite")
         favBtn.setImage(addToFavorite, for: .normal)
         favBtn.setImage(addedFavorite, for: .selected)
-        favBtn.accessibilityIdentifier = "\(self.item?.identifier ?? "")_detail"
-
+        if let identifier = self.item?.identifier {
+            favBtn.accessibilityIdentifier = "\(identifier)_detail"
+        } else {
+            favBtn.accessibilityIdentifier = nil
+        }
         titleLbl.text = item?.volumeInfo?.title
         authorLbl.text = item?.volumeInfo?.authors?.first
         infoLbl.text = item?.volumeInfo?.description
         linkBtn.setTitle(item?.volumeInfo?.infoLink, for: .normal)
-
-        titleView.isHidden = titleLbl.text?.isEmpty ?? true
-        authorView.isHidden = authorLbl.text?.isEmpty ?? true
-        infoView.isHidden = infoLbl.text?.isEmpty ?? true
-        linkView.isHidden = linkBtn.titleLabel?.text?.isEmpty ?? true
+        
+        setTags()
     }
     
-    func setFavorite(_ isFav: Bool) {
-        item?.isFavorite = isFav
-        favBtn.isSelected = isFav
-        let identifier = "\(item?.identifier ?? "")_master"
-        UIButton.with(identifier: identifier)?.isSelected = isFav
+    private func setTags() {
+        titleTag.isHidden = titleLbl.text?.isEmpty ?? true
+        authorTag.isHidden = authorLbl.text?.isEmpty ?? true
+        infoTag.isHidden = infoLbl.text?.isEmpty ?? true
     }
 
-    @IBAction func favBtnAction(_ sender: UIButton) {
-        setFavorite(!(item?.isFavorite ?? true))
+    @IBAction private func favBtnAction(_ sender: UIButton) {
+        setFavorite(isFavorite: !(item?.isFavorite ?? true))
     }
 
-    @IBAction func linkBtnAction(_ sender: UIButton) {
-        let url = URL(string: linkBtn.titleLabel?.text ?? "")
-        if let url = url {
-            UIApplication.shared.openURL(url)
+    @IBAction private func linkBtnAction(_ sender: UIButton) {
+        guard let url = URL(string: linkBtn.titleLabel?.text ?? ""), !url.absoluteString.isEmpty else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: { success in
+            print("Open \(url.absoluteString): \(success)")
+        })
+    }
+    
+    private func setFavorite(isFavorite: Bool) {
+        item?.isFavorite = isFavorite
+        favBtn.isSelected = isFavorite
+        if let identifier = item?.identifier,
+            let btn = UIButton.firstWith(identifier: "\(identifier)_master") {
+            btn.isSelected = isFavorite
         }
     }
 }

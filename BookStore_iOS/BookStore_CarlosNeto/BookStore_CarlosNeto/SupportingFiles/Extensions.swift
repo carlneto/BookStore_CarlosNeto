@@ -10,26 +10,20 @@ import UIKit
 
 extension UIView {
     
-    class func with(identifier: String?) -> Self? {
-        return with(type: self, identifier: identifier)
+    class func firstWith(identifier: String?) -> Self? {
+        return firstWith(type: self, identifier: identifier)
     }
     
-    private class func with<T: UIView>(type: T.Type, identifier: String?) -> T? {
+    private class func firstWith<T: UIView>(type: T.Type, identifier: String?) -> T? {
         var views: [T] = []
-        UIApplication.shared.windows.forEach {
-            views += $0.allSubViewsOf(type: T.self)
-        }
-        return views.first(where: {
-            $0.has(identifier: identifier)
-        })
+        UIApplication.shared.windows.forEach { views += $0.allSubViewsOf(type: T.self) }
+        return views.first(where: { $0.has(identifier: identifier) })
     }
     
     func allSubViewsOf<T: UIView>(type: T.Type) -> [T] {
         var all = [T]()
         func append(view: UIView) {
-            if let aView = view as? T {
-                all.append(aView)
-            }
+            if let aView = view as? T { all.append(aView) }
             guard view.subviews.count > 0 else { return }
             view.subviews.forEach{ append(view: $0) }
         }
@@ -47,9 +41,15 @@ extension UIView {
 }
 
 extension URL {
+    
     func asyncDownload(completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> ()) {
-        URLSession.shared
-            .dataTask(with: self, completionHandler: completion)
-            .resume()
+        URLSession.shared.dataTask(with: self, completionHandler: completion).resume()
+    }
+}
+
+extension Collection {
+
+    subscript (safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
     }
 }

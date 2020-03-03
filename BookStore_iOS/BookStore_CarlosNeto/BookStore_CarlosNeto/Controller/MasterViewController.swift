@@ -16,8 +16,13 @@ class MasterViewController: UITableViewController {
     private var volumes: BookVolumes?
     private var selectedItem: Item?
     private var tableItems: Items?
+    private var padding = 0
     private var startIndex = 0
-    private var maxResults = 0
+    private var maxResults = 0 {
+        didSet {
+            padding = Int(4 * Double(maxResults) / 5)
+        }
+    }
     
     var detailVC: DetailViewController?
     
@@ -33,12 +38,8 @@ class MasterViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if splitViewController?.isCollapsed ?? true {
-            volumesTableView.reloadData()
+            updateUI()
         }
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,94 +47,76 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = indexPath.row
-        let item = tableItems?[row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath) as? BookTableViewCell
-        cell?.setModel(item)
-        return cell!
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath) as? BookTableViewCell,
+            let item = tableItems?[safe: indexPath.row] else {
+                return UITableViewCell()
+        }
+        cell.setupUI(model: item)
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let row = indexPath.row
-        guard let vc = detailVC else { return }
-        detailVC?.setupUI(tableItems?[row])
-        if splitViewController?.isCollapsed ?? false {
-            splitViewController?.showDetailViewController(vc, sender: self)
+        guard let detailVC = detailVC else { return }
+        detailVC.setupUI(item: tableItems?[safe: indexPath.row])
+        if let splitVC = splitViewController, splitVC.isCollapsed {
+            splitVC.showDetailViewController(detailVC, sender: self)
         }
     }
     
-    func isLastIndex(_ indexPath: IndexPath?) -> Bool {
-        let lastSectionIndex = volumesTableView.numberOfSections - 1
-        let lastRowIndex = volumesTableView.numberOfRows(inSection: lastSectionIndex) - 1
-        return indexPath?.section == lastSectionIndex && indexPath?.row == lastRowIndex
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let count = tableItems?.count else { return }
+        if indexPath.row == count - padding { getBookVolumes() }
     }
     
-    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let currentOffset = scrollView.contentOffset.y
-        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
-        if currentOffset + 15.0 > maximumOffset {
-            getBookVolumes()
-        }
-    }
-    
-    func getBookVolumes() {
-        if favSwitch.isOn { return }
+    private func getBookVolumes() {
         let urn = "https://www.googleapis.com/books/v1/volumes"
         let uri = "\(urn)?q=ios&maxResults=\(maxResults)&startIndex=\(startIndex)"
-        guard let jsonURL = URL(string: uri) else { return }
-        weak var zelf = self
-        let start = Date()
+        guard !favSwitch.isOn, let jsonURL = URL(string: uri) else { return }
+        weak var weekSelf = self
         jsonURL.asyncDownload { data, response, error in
-            print("Download ended:", Date().description(with: .current))
-            print("Elapsed Time:", Date().timeIntervalSince(start), terminator: " seconds\n")
-            print("Data size:", data?.count ?? "nil", terminator: " bytes\n\n")
-
-            guard let data = data else {
-                print("URLSession dataTask error:", error ?? "nil")
-                return
-            }
-
+            guard let data = data else { return }
             do {
                 let jsonDecoder = JSONDecoder()
-                let bookVolumes = try jsonDecoder.decode(BookVolumes.self, from: data)
-                if let unwrappedSelf = zelf {
-                    unwrappedSelf.setBookVolumes(bookVolumes)
-                    unwrappedSelf.startIndex += unwrappedSelf.maxResults
-                    return
-                }
+                let books = try jsonDecoder.decode(BookVolumes.self, from: data)
+                guard let weekSelf = weekSelf else { return }
+                weekSelf.setModel(bookVolumes: books)
+                weekSelf.startIndex += weekSelf.maxResults
             } catch {
                 print("JSONSerialization error:", error)
             }
-            print("asyncDownload error: \(uri)")
         }
     }
     
-    func setBookVolumes(_ bookVolumes: BookVolumes?) {
-        if volumes == nil {
-                for var item in bookVolumes?.items ?? [] {
-                    item.isFavorite = false
-            }
-            volumes = bookVolumes
-        } else {
-                for var item in bookVolumes?.items ?? [] {
-                    item.isFavorite = false
-                    volumes?.items?.append(item)
-            }
+    private func setModel(bookVolumes: BookVolumes?) {
+        let isVolumesNil = volumes == nil
+        for var item in bookVolumes?.items ?? [] {
+            item.isFavorite = false
+            if !isVolumesNil { volumes?.items?.append(item) }
         }
-        setTableDataSource(all: true)
+        if isVolumesNil { volumes = bookVolumes }
+        setDataSource(toAll: true)
     }
     
-    @IBAction func favSwitchAction(_ sender: UISwitch) {
-        setTableDataSource(all: !favSwitch.isOn)
+    @IBAction private func favSwitchAction(_ sender: UISwitch) {
+        setDataSource(toAll: !favSwitch.isOn)
     }
     
-    func setTableDataSource(all: Bool) {
+    private func setDataSource(toAll: Bool) {
         tableItems = Items()
-        for var item in volumes?.items ?? [] {
-            if all || item.isFavorite {
-                tableItems?.append(item)
+        volumes?.items?.forEach {
+            var item = $0
+            if toAll || item.isFavorite { tableItems?.append(item) }
+        }
+        updateUI()
+    }
+    
+    private func updateUI() {
+        if Thread.isMainThread {
+            volumesTableView.reloadData()
+        } else {
+            DispatchQueue.main.async {
+                self.volumesTableView.reloadData()
             }
         }
-        volumesTableView.reloadData()
     }
 }

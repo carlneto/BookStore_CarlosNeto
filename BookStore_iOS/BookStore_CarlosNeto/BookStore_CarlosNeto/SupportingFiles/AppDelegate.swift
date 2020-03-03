@@ -14,15 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        let splitViewController = window?.rootViewController as? UISplitViewController
-        let leftNavController = splitViewController?.viewControllers.first as? UINavigationController
-        let masterViewController = leftNavController?.topViewController as? MasterViewController
-        let rightNavController = splitViewController?.viewControllers.last as? UINavigationController
-        let detailViewController = rightNavController?.topViewController as? DetailViewController
-        masterViewController?.detailVC = detailViewController
-        detailViewController?.navigationItem.leftItemsSupplementBackButton = true
-        detailViewController?.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+        guard
+            let splitViewController = window?.rootViewController as? UISplitViewController,
+            let leftNavController = splitViewController.viewControllers.first as? UINavigationController,
+            let masterViewController = leftNavController.topViewController as? MasterViewController,
+            let rightNavController = splitViewController.viewControllers.last as? UINavigationController,
+            let detailViewController = rightNavController.topViewController as? DetailViewController
+            else { return true }
+        masterViewController.detailVC = detailViewController
+        detailViewController.navigationItem.leftItemsSupplementBackButton = true
+        detailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         
         return true
     }

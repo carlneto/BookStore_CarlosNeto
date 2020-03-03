@@ -14,36 +14,41 @@ class BookTableViewCell: UITableViewCell {
     @IBOutlet private weak var titleLbl: UILabel!
     @IBOutlet private weak var priceLbl: UILabel!
     
+    private let addToFavorite = UIImage(named: "addToFavorite")
+    private let addedFavorite = UIImage(named: "addedFavorite")
+    
     private var item: Item?
     
-    func setModel(_ model: Item?) {
+    func setupUI(model: Item?) {
         item = model
+        setFavorite(isFavorite: item?.isFavorite ?? false)
         let title = item?.volumeInfo?.title
         let listPrice = item?.saleInfo?.listPrice
         var price: String? = nil
         if let amount = listPrice?.amount, let value = listPrice?.currencyCode {
             price = listPrice != nil ? String(format: "%0.2f %@", amount, value) : "---"
         }
-        setFavorite(item?.isFavorite)
-        let addToFavorite = UIImage(named: "addToFavorite")
-        let addedFavorite = UIImage(named: "addedFavorite")
         favBtn.setImage(addToFavorite, for: .normal)
         favBtn.setImage(addedFavorite, for: .selected)
-        let favBtnIdentifier = "\(item?.identifier ?? "item_identifier")_master"
-        favBtn.accessibilityIdentifier = favBtnIdentifier
+        if let identifier = item?.identifier {
+            favBtn.accessibilityIdentifier = "\(identifier)_master"
+        } else {
+            favBtn.accessibilityIdentifier = nil
+        }
         titleLbl.text = title
         priceLbl.text = price
     }
     
-    @IBAction func favBtnAction() {
-        setFavorite(item?.isFavorite)
+    @IBAction private func favBtnAction() {
+        setFavorite(isFavorite: !(item?.isFavorite ?? false))
     }
 
-    func setFavorite(_ isFav: Bool?) {
-        let isFavorite = isFav ?? false
+    private func setFavorite(isFavorite: Bool) {
         item?.isFavorite = isFavorite
         favBtn.isSelected = isFavorite
-        let itemId = "\(item?.identifier ?? "")_detail"
-        UIButton.with(identifier: itemId)?.isSelected = isFavorite
+        if let identifier = item?.identifier,
+            let btn = UIButton.firstWith(identifier: "\(identifier)_detail") {
+            btn.isSelected = isFavorite
+        }
     }
 }

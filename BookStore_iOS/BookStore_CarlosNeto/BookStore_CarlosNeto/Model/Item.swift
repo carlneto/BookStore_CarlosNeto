@@ -21,17 +21,18 @@ struct Item: Codable {
     let accessInfo: AccessInfo?
     let searchInfo: SearchInfo?
     
+    private let useDefaults = UserDefaults.standard
     private var _isFavorite = false
     
     var isFavorite: Bool {
         mutating get {
             guard let identifier = identifier else { return false }
-            _isFavorite = UserDefaults.standard.bool(forKey: identifier)
+            _isFavorite = useDefaults.bool(forKey: identifier)
             return _isFavorite
         }
         set {
             guard let identifier = identifier else { return }
-            UserDefaults.standard.set(newValue, forKey: identifier)
+            useDefaults.set(newValue, forKey: identifier)
             _isFavorite = newValue
         }
     }
