@@ -211,6 +211,7 @@
                                 </label>
                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SqT-4C-Zox" userLabel="Favorites Switch">
                                     <rect key="frame" x="352" y="7" width="52" height="30"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="SqT-4C-Zox"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="d7W-lK-4uq"/>
                                         <constraint firstAttribute="width" constant="50" id="kPC-Y0-PXR"/>
