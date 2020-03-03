@@ -18,11 +18,7 @@ class MasterViewController: UITableViewController {
     private var tableItems: Items?
     private var padding = 0
     private var startIndex = 0
-    private var maxResults = 0 {
-        didSet {
-            padding = Int(4 * Double(maxResults) / 5)
-        }
-    }
+    private var maxResults = 0 { didSet { padding = Int(4 * Double(maxResults) / 5) } }
     
     var detailVC: DetailViewController?
     
@@ -37,9 +33,7 @@ class MasterViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if splitViewController?.isCollapsed ?? true {
-            updateUI()
-        }
+        if splitViewController?.isCollapsed ?? true { updateUI() }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,9 +42,7 @@ class MasterViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath) as? BookTableViewCell,
-            let item = tableItems?[safe: indexPath.row] else {
-                return UITableViewCell()
-        }
+            let item = tableItems?[safe: indexPath.row] else { return UITableViewCell() }
         cell.setupUI(model: item)
         return cell
     }
