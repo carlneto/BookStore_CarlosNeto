@@ -135,4 +135,5 @@ For full details, refer to the `LICENSE` file.
 ## 9. Credits / Authors
 
 **Author:** © 2025 — *carlneto*
+
 Creator and maintainer of the BookFinder project and all related assets.
